@@ -1,0 +1,173 @@
+.committee-name {
+    color: rgb(221, 204, 183);
+    font-weight: bold;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f8f9fa;
+    overflow: hidden; 
+  }
+  
+  .carousel-container {
+    width: 100%;
+    max-width: 800px;
+    position: relative;
+    height: 500px;
+    overflow: hidden; 
+  }
+  
+  #searchBar {
+    width: 60%;
+    padding: 14px;
+    margin: 20px auto;
+    font-size: 16px;
+    display: block;
+    background-color: #f1f1f1;
+    border-radius: 30px;
+    border: 0px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  }
+  
+  .carousel {
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
+    padding: 70px;
+  }
+  
+  .carousel-track {
+    display: flex;
+    transition: transform 0.6s ease-in-out; 
+   
+  }
+  
+  
+  .card {
+    min-width: 200px;
+    margin: 0 20px;
+    background-color: rgba(0, 0, 128, 0.578);
+    color: rgba(221, 204, 183, 0.619);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transform: scale(1); 
+    transition: transform 1s ease-in-out;
+    transform: translateX(190px);
+    
+  }
+  
+  .card.active {
+    transform: scale(1.2) translateX(157px); 
+    justify-content: center;
+    transition: all ease-in-out;
+    background-color: navy;
+    color: white;
+    transition: transform 1s ease-in-out;
+    align-items: center;
+    
+  }
+  
+  .card.active:hover{
+      background-color: rgb(0, 0, 107);
+      transition: transform 0.5s ease-in-out;
+      transform: rotateY('180');
+  }
+  
+  .image-placeholder {
+    height: 200px;
+    width: 200px;
+    background-color: gray;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    position: relative;
+    overflow: hidden; /* Ensures the flipping image stays inside */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .cm {
+    position: relative;
+    transform-style: preserve-3d;
+    height: 100%;
+    width: 100%;
+    transition: transform 0.5s ease;
+  }
+  
+  .cm:hover {
+    transform: rotateY(180deg);
+  }
+  
+  .front,
+  .back {
+    position: absolute;
+    backface-visibility: hidden;
+    height: 100%;
+    width: 100%;
+  }
+  
+  .front {
+    background-color: lightgray;
+  }
+  
+  .back {
+    transform: rotateY(180deg);
+    background-color: beige;
+  }
+  
+  
+  button.prev,
+  button.next {
+    background-color: #f1f1f1;
+    color: rgb(0, 0, 97);
+    border: none;
+    padding: 15px 20px;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    border-radius: 50%;
+    font-size: 18px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    transition: all ease-in-out;
+  }
+  
+  button.next:hover{
+      background-color: #c6c6c6;
+      transition: 0.7s;
+    
+  }
+  
+  button.prev:hover{
+      background-color: #c6c6c6;
+      transition: 0.7s;
+  }
+  button.prev {
+    left: 10px; 
+  }
+  
+  button.next {
+    right: 10px; 
+  }
+  
+  @media (max-width: 768px) {
+    .card {
+      min-width: 250px;
+    }
+  
+    button.prev,
+    button.next {
+      left: 10px;
+      right: 10px;
+      padding: 10px 15px;
+    }
+  }
